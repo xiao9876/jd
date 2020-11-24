@@ -23,7 +23,7 @@ jobs:
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-          node-version: 14.1.0
+          node-version: ${{ matrix.node-version }}
       - name: Cache node_modules
         uses: actions/cache@v2 # 使用 GitHub 官方的缓存 Action。
         env:
