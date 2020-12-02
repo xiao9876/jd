@@ -21,13 +21,16 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
       - name: Checkout
+        if: env.QQ_READ_HEADER_VAL && env.QQ_READ_TIME_URL_VAL && env.QQ_READ_TIME_HEADER_VAL
         run: |
           git clone https://github.com/lxk0301/jd_scripts.git ~/jd_scripts
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
+        if: env.QQ_READ_HEADER_VAL && env.QQ_READ_TIME_URL_VAL && env.QQ_READ_TIME_HEADER_VAL
         with:
           node-version: ${{ matrix.node-version }}
       - name: Cache node_modules
+        if: env.QQ_READ_HEADER_VAL && env.QQ_READ_TIME_URL_VAL && env.QQ_READ_TIME_HEADER_VAL
         uses: actions/cache@v2 # 使用 GitHub 官方的缓存 Action。
         env:
           cache-name: cache-node-modules
@@ -35,6 +38,7 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
       - name: npm install
+        if: env.QQ_READ_HEADER_VAL && env.QQ_READ_TIME_URL_VAL && env.QQ_READ_TIME_HEADER_VAL
         run: |
           cd ~/jd_scripts
           git checkout master
