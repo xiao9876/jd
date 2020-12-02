@@ -43,7 +43,6 @@ jobs:
         env:
           QQ_READ_HEADER_VAL: ${{ secrets.QQ_READ_HEADER_VAL }}
           QQ_READ_TIME_URL_VAL: ${{ secrets.QQ_READ_TIME_URL_VAL }}
-          JOY_FEED_COUNT: ${{ secrets.JOY_FEED_COUNT }}
           QQ_READ_TIME_HEADER_VAL: ${{ secrets.QQ_READ_TIME_HEADER_VAL }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
