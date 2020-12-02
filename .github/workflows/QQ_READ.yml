@@ -18,7 +18,7 @@ jobs:
       QQ_READ_TIME_URL_VAL: ${{ secrets.QQ_READ_TIME_URL_VAL }}
       QQ_READ_TIME_HEADER_VAL: ${{ secrets.QQ_READ_TIME_HEADER_VAL }}
     runs-on: ubuntu-latest
-    if: env.QQ_READ_HEADER_VAL && env.QQ_READ_TIME_URL_VAL && env.QQ_READ_TIME_HEADER_VAL
+    if: github.event.repository.owner.id == github.event.sender.id
     steps:
       - name: Checkout
         run: |
@@ -40,6 +40,7 @@ jobs:
           git checkout master
           npm install
       - name: '运行 【企鹅读书】'
+        if: env.QQ_READ_HEADER_VAL && env.QQ_READ_TIME_URL_VAL && env.QQ_READ_TIME_HEADER_VAL
         run: |
           cd ~/jd_scripts/backUp
           node qqread.js
