@@ -13,9 +13,12 @@ on:
     types: QQ_READ
 jobs:
   build:
-
+    env:
+      QQ_READ_HEADER_VAL: ${{ secrets.QQ_READ_HEADER_VAL }}
+      QQ_READ_TIME_URL_VAL: ${{ secrets.QQ_READ_TIME_URL_VAL }}
+      QQ_READ_TIME_HEADER_VAL: ${{ secrets.QQ_READ_TIME_HEADER_VAL }}
     runs-on: ubuntu-latest
-    if: github.event.repository.owner.id == github.event.sender.id
+    if: ${{ github.event.repository.owner.id == github.event.sender.id && env.QQ_READ_HEADER_VAL && env.QQ_READ_TIME_URL_VAL && env.QQ_READ_TIME_HEADER_VAL }}
     steps:
       - name: Checkout
         run: |
