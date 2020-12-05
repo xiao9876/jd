@@ -44,6 +44,7 @@ jobs:
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           JOY_FEED_COUNT: ${{ secrets.JOY_FEED_COUNT }}
           JOY_RUN_FLAG: ${{ secrets.JOY_RUN_FLAG }}
+          JOY_TEAM_LEVEL: ${{ secrets.JOY_TEAM_LEVEL }} #参加多少人的赛跑比赛，可选[2,10,50]
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           BARK_SOUND: ${{ secrets.BARK_SOUND }}
