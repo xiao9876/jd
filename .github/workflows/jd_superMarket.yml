@@ -52,3 +52,7 @@ jobs:
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
           SUPERMARKET_UPGRADE: ${{ secrets.SUPERMARKET_UPGRADE }}
           SUPERMARKET_LOTTERY: ${{ secrets.SUPERMARKET_LOTTERY }}
+          QQ_SKEY: ${{ secrets.QQ_SKEY }}
+          QQ_MODE: ${{ secrets.QQ_MODE }}
+          PUSH_PLUS_TOKEN: ${{ secrets.PUSH_PLUS_TOKEN }}
+          PUSH_PLUS_USER: ${{ secrets.PUSH_PLUS_USER }}
