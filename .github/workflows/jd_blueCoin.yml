@@ -42,6 +42,7 @@ jobs:
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
           MARKET_COIN_TO_BEANS: ${{ secrets.MARKET_COIN_TO_BEANS }}
           MARKET_REWARD_NOTIFY: ${{ secrets.MARKET_REWARD_NOTIFY }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
