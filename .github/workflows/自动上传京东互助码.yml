@@ -10,6 +10,7 @@ jobs:
       TG_USER_ID: ${{ secrets.TG_USER_ID }}
       TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
       PUSH_KEY: ${{ secrets.PUSH_KEY }}
+      BARK_PUSH: ${{ secrets.BARK_PUSH }}
       MyFruit1: ${{ secrets.MyFruit1 }}
       MyFruit2: ${{ secrets.MyFruit2 }}
       MyBean1: ${{ secrets.MyBean1 }}
