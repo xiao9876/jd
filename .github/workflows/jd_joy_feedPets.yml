@@ -1,4 +1,4 @@
-name: jd_joy_feedPets
+name: 宠汪汪喂食脚本
 
 on:
   workflow_dispatch:
