@@ -31,4 +31,4 @@ jobs:
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT || github.event.client_payload.JD_USER_AGENT }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN || github.event.client_payload.TG_BOT_TOKEN }}
           TG_USER_ID: ${{ secrets.TG_USER_ID || github.event.client_payload.TG_USER_ID }}
-          SYNCURL: https://raw.githubusercontent.com/shylocks/Loon/main/jd_ms.js
+          SYNCURL: https://github.com/shylocks/Loon/blob/main/jd_ms.js
