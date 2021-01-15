@@ -1,0 +1,29 @@
+# File: .github/workflows/repozsh-sync.yml
+name: 同步zsh35-ac
+on:
+  schedule:
+    - cron: '5 15 * * *'
+  workflow_dispatch:
+  watch:
+    types: started
+  repository_dispatch:
+    types: repozsh-scripts
+jobs:
+  repo-sync:
+    env:
+      PAT: ${{ github.event.client_payload.PAT || secrets.PAT }} 
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: repo-zsh35-ac
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://github.com/zsh35/jd_actions.git"
+          source_branch: "main"
+          destination_branch: "main"
+          github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
