@@ -1,4 +1,4 @@
-name: 京喜农场 clone写法
+name: 盲盒抽京豆
  
 on:
   workflow_dispatch:
