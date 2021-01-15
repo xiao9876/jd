@@ -1,0 +1,34 @@
+name: 远程 超级直播间红包雨
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30,31 20-23/1 15 1 *'
+  watch:
+    types: started
+  repository_dispatch:
+    types: jd_live_redrain
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - name: npm install
+        run: |
+          npm install
+      - name: '运行 【超级直播间红包雨】'
+        run: |
+          node onlyOneExecute.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE || github.event.client_payload.JD_COOKIE }}
+          JD_DEBUG: ${{ secrets.JD_DEBUG || github.event.client_payload.JD_DEBUG }}
+          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT || github.event.client_payload.JD_USER_AGENT }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN || github.event.client_payload.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID || github.event.client_payload.TG_USER_ID }}
+          SYNCURL: https://raw.githubusercontent.com/shylocks/Loon/main/jd_live_redrain.js
