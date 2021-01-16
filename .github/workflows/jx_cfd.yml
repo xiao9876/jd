@@ -1,4 +1,4 @@
-name: 京喜财富岛
+name: 远程 京喜财富岛
 
 on:
     workflow_dispatch:
