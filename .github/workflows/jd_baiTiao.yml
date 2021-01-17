@@ -1,4 +1,4 @@
-name: url天天领白条券
+name: url 天天领白条券
 
 on:
     workflow_dispatch:
