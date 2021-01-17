@@ -1,5 +1,5 @@
 
-name: 远程 盲盒抽京豆
+name: url 盲盒抽京豆
 
 on:
   workflow_dispatch:
