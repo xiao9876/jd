@@ -1,4 +1,4 @@
-name: 点点券脚本
+name: 点点券
 
 on:
   workflow_dispatch:
@@ -39,7 +39,7 @@ jobs:
           cd ~/TaskAction
           git checkout my3
           npm install
-      - name: '运行 【工业品爱消除】'
+      - name: '运行 【点点券】'
         run: |
           cd ~/TaskAction
           node jd_necklace.js
