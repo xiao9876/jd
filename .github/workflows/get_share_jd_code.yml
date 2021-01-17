@@ -6,7 +6,7 @@ name: 互助码提交ZQ
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 35 2 1,10,20 * ?'
+    - cron: "5 20 1,10,20 * *" # 每月1/10/20号凌晨四点零五分跑一次互助码自动提交
   watch:
     types: started
   repository_dispatch:
