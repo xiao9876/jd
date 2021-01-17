@@ -37,7 +37,7 @@ jobs:
         if: env.JD_COOKIE
         run: |
           cd ~/TaskAction
-          git checkout my2
+          git checkout my3
           npm install
       - name: '运行 【金融养猪】'
         run: |
