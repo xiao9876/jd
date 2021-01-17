@@ -1,9 +1,9 @@
-name: 取关商品
+name: 取关商品店铺
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '45 23 * * *'
+    - cron: '30 23 * * *'
   watch:
         types: started
   repository_dispatch:
@@ -39,7 +39,7 @@ jobs:
           cd ~/TaskAction
           git checkout my3
           npm install
-      - name: '运行 【取关商品】'
+      - name: '运行 【取关商品店铺】'
         run: |
           cd ~/TaskAction
           node jd_unsubscribe.js
