@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Ñ­»·ÈÎÎñ
+name: å¾ªç¯ä»»åŠ¡
 
 on:
   workflow_dispatch:
@@ -29,19 +29,19 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Cache node_modules
         if: env.JD_COOKIE
-        uses: actions/cache@v2 # Ê¹ÓÃ GitHub ¹Ù·½µÄ»º´æ Action¡£
+        uses: actions/cache@v2 # ä½¿ç”¨ GitHub å®˜æ–¹çš„ç¼“å­˜ Actionã€‚
         env:
           cache-name: cache-node-modules
         with:
           path: node_modules
-          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # Ê¹ÓÃ package-lock.json µÄ Hash ×÷Îª»º´æµÄ key¡£Ò²¿ÉÒÔÊ¹ÓÃ package.json ´úÌæ
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # ä½¿ç”¨ package-lock.json çš„ Hash ä½œä¸ºç¼“å­˜çš„ keyã€‚ä¹Ÿå¯ä»¥ä½¿ç”¨ package.json ä»£æ›¿
       - name: npm install
         if: env.JD_COOKIE
         run: |
           cd ~/TaskAction
           git checkout my2
           npm install
-      - name: 'ÔËĞĞ ¡¾¶«¶«Å©³¡¡¿'
+      - name: 'è¿è¡Œ ã€ä¸œä¸œå†œåœºã€‘'
         run: |
           cd ~/TaskAction
           node jd_fruit.js
@@ -51,7 +51,7 @@ jobs:
           PUSH_KEY: ${{ github.event.client_payload.PUSH_KEY || secrets.PUSH_KEY }}
           BARK_PUSH: ${{ github.event.client_payload.BARK_PUSH || secrets.BARK_PUSH }}
 
-      - name: 'ÔËĞĞ ¡¾¶«¶«ÃÈ³è¡¿'
+      - name: 'è¿è¡Œ ã€ä¸œä¸œèŒå® ã€‘'
         run: |
           cd ~/TaskAction
           node jd_pet.js
@@ -61,7 +61,7 @@ jobs:
           PUSH_KEY: ${{ github.event.client_payload.PUSH_KEY || secrets.PUSH_KEY }}
           BARK_PUSH: ${{ github.event.client_payload.BARK_PUSH || secrets.BARK_PUSH }}
 
-      - name: 'ÔËĞĞ ¡¾¿Ú´üÊéµê¡¿'
+      - name: 'è¿è¡Œ ã€å£è¢‹ä¹¦åº—ã€‘'
         run: |
           cd ~/TaskAction
           node jd_bookshop.js
@@ -71,7 +71,7 @@ jobs:
           PUSH_KEY: ${{ github.event.client_payload.PUSH_KEY || secrets.PUSH_KEY }}
           BARK_PUSH: ${{ github.event.client_payload.BARK_PUSH || secrets.BARK_PUSH }}
 
-      - name: 'ÔËĞĞ ¡¾¾©Ï²Å©³¡¡¿'
+      - name: 'è¿è¡Œ ã€äº¬å–œå†œåœºã€‘'
         run: |
           cd ~/TaskAction
           node jd_jxnc.js
@@ -82,7 +82,7 @@ jobs:
           PUSH_KEY: ${{ github.event.client_payload.PUSH_KEY || secrets.PUSH_KEY }}
           BARK_PUSH: ${{ github.event.client_payload.BARK_PUSH || secrets.BARK_PUSH }}
 
-      - name: 'ÔËĞĞ ¡¾³èÍôÍô»ı·Ö¶Ò»»½±Æ·¡¿'
+      - name: 'è¿è¡Œ ã€å® æ±ªæ±ªç§¯åˆ†å…‘æ¢å¥–å“ã€‘'
         run: |
           cd ~/TaskAction
           node jd_joy_reward.js
@@ -92,7 +92,7 @@ jobs:
           PUSH_KEY: ${{ github.event.client_payload.PUSH_KEY || secrets.PUSH_KEY }}
           BARK_PUSH: ${{ github.event.client_payload.BARK_PUSH || secrets.BARK_PUSH }}
 
-      - name: 'ÔËĞĞ ¡¾³èÍôÍôÍµºÃÓÑ»ı·ÖÓë¹·¡¿'
+      - name: 'è¿è¡Œ ã€å® æ±ªæ±ªå·å¥½å‹ç§¯åˆ†ä¸ç‹—ã€‘'
         run: |
           cd ~/TaskAction
           node jd_joy_steal.js
@@ -102,7 +102,7 @@ jobs:
           PUSH_KEY: ${{ github.event.client_payload.PUSH_KEY || secrets.PUSH_KEY }}
           BARK_PUSH: ${{ github.event.client_payload.BARK_PUSH || secrets.BARK_PUSH }}
 
-      - name: 'ÔËĞĞ ¡¾µãµãÈ¯¡¿'
+      - name: 'è¿è¡Œ ã€ç‚¹ç‚¹åˆ¸ã€‘'
         run: |
           cd ~/TaskAction
           node jd_necklace.js
@@ -112,7 +112,7 @@ jobs:
           PUSH_KEY: ${{ github.event.client_payload.PUSH_KEY || secrets.PUSH_KEY }}
           BARK_PUSH: ${{ github.event.client_payload.BARK_PUSH || secrets.BARK_PUSH }}
 
-      - name: 'ÔËĞĞ ¡¾¾©¶«Ö±²¥18¶¹¡¿'
+      - name: 'è¿è¡Œ ã€äº¬ä¸œç›´æ’­18è±†ã€‘'
         run: |
           cd ~/TaskAction
           node jd_live.js
@@ -122,17 +122,7 @@ jobs:
           PUSH_KEY: ${{ github.event.client_payload.PUSH_KEY || secrets.PUSH_KEY }}
           BARK_PUSH: ${{ github.event.client_payload.BARK_PUSH || secrets.BARK_PUSH }}
 
-      - name: 'ÔËĞĞ ¡¾È¡¹Ø¾©¶«µêÆÌÉÌÆ·¡¿'
-        run: |
-          cd ~/TaskAction
-          node jd_unsubscribe.js
-        env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
-          PUSH_KEY: ${{ github.event.client_payload.PUSH_KEY || secrets.PUSH_KEY }}
-          BARK_PUSH: ${{ github.event.client_payload.BARK_PUSH || secrets.BARK_PUSH }}
-
-      - name: 'ÔËĞĞ ¡¾¾©¶«ÌìÌì¼ÓËÙ¡¿'
+      - name: 'è¿è¡Œ ã€äº¬ä¸œå¤©å¤©åŠ é€Ÿã€‘'
         run: |
           cd ~/TaskAction
           node jd_speed.js
@@ -142,7 +132,7 @@ jobs:
           PUSH_KEY: ${{ github.event.client_payload.PUSH_KEY || secrets.PUSH_KEY }}
           BARK_PUSH: ${{ github.event.client_payload.BARK_PUSH || secrets.BARK_PUSH }}
 
-      - name: 'ÔËĞĞ ¡¾ÌìÌìÌá¶ì¡¿'
+      - name: 'è¿è¡Œ ã€å¤©å¤©æé¹…ã€‘'
         run: |
           cd ~/TaskAction
           node jd_daily_egg.js
@@ -152,7 +142,7 @@ jobs:
           PUSH_KEY: ${{ github.event.client_payload.PUSH_KEY || secrets.PUSH_KEY }}
           BARK_PUSH: ${{ github.event.client_payload.BARK_PUSH || secrets.BARK_PUSH }}
 
-      - name: 'ÔËĞĞ ¡¾¶«¶«³¬ÊĞ¡¿'
+      - name: 'è¿è¡Œ ã€ä¸œä¸œè¶…å¸‚ã€‘'
         run: |
           cd ~/TaskAction
           node jd_superMarket.js
@@ -162,7 +152,7 @@ jobs:
           PUSH_KEY: ${{ github.event.client_payload.PUSH_KEY || secrets.PUSH_KEY }}
           BARK_PUSH: ${{ github.event.client_payload.BARK_PUSH || secrets.BARK_PUSH }}
 
-      - name: 'ÔËĞĞ ¡¾¾©¶«¼ÒÍ¥ºÅ¡¿'
+      - name: 'è¿è¡Œ ã€äº¬ä¸œå®¶åº­å·ã€‘'
         run: |
           cd ~/TaskAction
           node jd_family.js
