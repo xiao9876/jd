@@ -1,4 +1,4 @@
-name: 远程 天天领白条券
+name: 天天领白条券url
 
 on:
     workflow_dispatch:
