@@ -1,4 +1,4 @@
-name: 京东取关商品
+name: 取关商品
 
 on:
   workflow_dispatch:
