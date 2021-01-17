@@ -1,4 +1,4 @@
-name: 十元街签到
+name: 十元街
 
 on:
   workflow_dispatch:
