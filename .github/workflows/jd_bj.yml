@@ -1,4 +1,4 @@
-name: 远程 宝洁美发屋
+name: url 宝洁美发屋
 
 on:
   workflow_dispatch:
