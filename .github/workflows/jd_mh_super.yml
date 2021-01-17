@@ -1,4 +1,4 @@
-name: 远程 幸运值抽京豆
+name: url 幸运值抽京豆
 
 on:
   workflow_dispatch:
