@@ -3,11 +3,11 @@ name: 取关商品
 on:
   workflow_dispatch:
   schedule:
-    - cron: '45 15 * * *'
+    - cron: '45 23 * * *'
   watch:
         types: started
   repository_dispatch:
-    types: unsubscribe
+    types: jd_unsubscribe
     
 jobs:
   build:
@@ -42,7 +42,7 @@ jobs:
       - name: '运行 【取关商品】'
         run: |
           cd ~/TaskAction
-          node unsubscribe.js
+          node jd_unsubscribe.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
