@@ -1,4 +1,4 @@
-name: 远程 互助码获取并提交
+name: url 互助码获取并提交
 
 on:
   workflow_dispatch:
