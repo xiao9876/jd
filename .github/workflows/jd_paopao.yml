@@ -1,4 +1,4 @@
-name: 远程 泡泡大战
+name: url 泡泡大战
 
 on:
     workflow_dispatch:
