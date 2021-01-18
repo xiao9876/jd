@@ -22,3 +22,17 @@
 | `MyJoy2`                |疯狂的Joy互助码2   | 非必须 | 
 | `MyCash1`               |签到领现金互助码1  | 非必须 | 
 | `MyCash2`               |签到领现金互助码2  | 非必须 | 
+
+
+
+[@lxk0301](https://github.com/LXK9301/jd_scripts/tree/master) - 京东系列
+
+[@shylocks](https://github.com/shylocks/loon) - 京东系列2
+
+[@Zero-S1](https://github.com/Zero-S1/xmly_speed) - 喜马拉雅极速版签到
+
+[@Sunert](https://github.com/Sunert/Scripts) - 中青看点极速版，米读自动阅读，电视家，腾讯新闻
+
+[@ziye12](https://github.com/ziye12/JavaScript) - 企鹅读书
+
+
