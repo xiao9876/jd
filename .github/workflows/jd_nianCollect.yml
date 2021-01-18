@@ -6,7 +6,7 @@ name: 京东收🧨
 on:
   workflow_dispatch:
   schedule:
-    - cron: '20 * * * *'
+    - cron: '20 * * * *' #在每小时的20分运行
   watch:
     types: started
   repository_dispatch:
