@@ -19,7 +19,7 @@ jobs:
       - name: Checkout
         if: env.JD_COOKIE
         run: |
-          git clone https://github.com/zsh35/jd_scripts.git ~/TaskAction
+          git clone https://github.com/zsh35/jd_scripts.git ~/jd_scripts
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         if: env.JD_COOKIE
@@ -36,12 +36,12 @@ jobs:
       - name: npm install
         if: env.JD_COOKIE
         run: |
-          cd ~/TaskAction
+          cd ~/jd_scripts
           git checkout my3
           npm install
       - name: '运行 【取关商品店铺】'
         run: |
-          cd ~/TaskAction
+          cd ~/jd_scripts
           node jd_unsubscribe.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
