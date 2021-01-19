@@ -33,7 +33,7 @@ jobs:
       - name: npm install
         run: |
           cd ~/jd_scripts
-          git checkout master
+          git checkout my3
           npm install
       - name: '运行 【步步宝2】'
         run: |
