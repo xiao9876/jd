@@ -1,5 +1,10 @@
-##### 京东互助码自动上车
+# xmly_speed
+喜马拉雅极速版
+[参考](https://github.com/Zero-S1/xmly_speed/blob/master/xmly_speed.md)      
+暂时存档
 
+
+##### 京东互助码自动上车
 
 [@lxk0301](https://github.com/LXK9301/jd_scripts/tree/master) - 京东系列
 
