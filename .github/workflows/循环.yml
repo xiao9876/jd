@@ -39,7 +39,7 @@ jobs:
         if: env.JD_COOKIE
         run: |
           cd ~/jd_scripts
-          git checkout my2
+          git checkout my3
           npm install
       - name: '运行 【东东农场】'
         run: |
