@@ -15,6 +15,8 @@
 [@Sunert](https://github.com/Sunert/Scripts) - 中青看点极速版，米读自动阅读，电视家，腾讯新闻
 
 [@ziye12](https://github.com/ziye12/JavaScript) - 企鹅读书
+
+[@adwktt](https://github.com/adwktt/adwktt) - 步步宝
          
 [@1217079729](https://github.com/1217079729/TaskAction) - TaskAction
 
