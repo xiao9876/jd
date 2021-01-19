@@ -38,6 +38,6 @@ jobs:
       - name: '运行 【步步宝】'
         run: |
           cd ~/jd_scripts
-          node BBB.js
+          node bbb.js
         env:
           TZ: Asia/shanghai
