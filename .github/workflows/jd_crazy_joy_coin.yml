@@ -39,7 +39,7 @@ jobs:
         if: env.JD_COOKIE
         run: |
           cd ~/jd_scripts
-          git checkout my3
+          git checkout my
           npm install
       - name: '运行 【疯狂crazyJoy挂机】'
         if: env.JD_COOKIE
