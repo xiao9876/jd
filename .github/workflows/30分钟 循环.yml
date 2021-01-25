@@ -40,7 +40,7 @@ jobs:
         if: env.JD_COOKIE
         run: |
           cd ~/jd_scripts
-          git checkout my3
+          git checkout my
           npm install
       - name: '运行 【工业品爱消除】'
         run: |
