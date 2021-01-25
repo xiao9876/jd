@@ -41,6 +41,7 @@ jobs:
           cd ~/jd_scripts
           git checkout my
           npm install
+          
       - name: '运行 【签到】'
         run: |
           cd ~/jd_scripts
