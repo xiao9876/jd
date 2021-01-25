@@ -162,13 +162,6 @@ jobs:
           PUSH_KEY: ${{ github.event.client_payload.PUSH_KEY || secrets.PUSH_KEY }}
           BARK_PUSH: ${{ github.event.client_payload.BARK_PUSH || secrets.BARK_PUSH }}
 
-      # 根据上游得知该脚本有黑号风险
-      #      - name: '运行 【京东家庭号】'
-      #        run: |
-      #          cd ~/jd_scripts
-      #          node jd_family.js
-      #        env:
-      #          JD_COOKIE: ${{ secrets.JD_COOKIE }}
 
       - name: '运行 【京东炸年兽】'
         run: |
