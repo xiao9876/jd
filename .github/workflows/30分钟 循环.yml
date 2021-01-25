@@ -51,4 +51,11 @@ jobs:
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
           PUSH_KEY: ${{ github.event.client_payload.PUSH_KEY || secrets.PUSH_KEY }}
           BARK_PUSH: ${{ github.event.client_payload.BARK_PUSH || secrets.BARK_PUSH }}
-          
+  
+       - name: '运行 【京东炸年兽领爆竹🧨】'
+        run: |
+          cd ~/jd_scripts
+          node jd_nianCollect.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}       
