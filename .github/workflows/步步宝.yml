@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/zsh35/jd_scripts.git ~/jd_scripts
+          git clone https://github.com/zsh35/jd_actions.git ~/jd_scripts
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -33,11 +33,11 @@ jobs:
       - name: npm install
         run: |
           cd ~/jd_scripts
-          git checkout my
+          git checkout main
           npm install
       - name: '运行 【步步宝app】'
         run: |
-          cd ~/jd_scripts
+          cd ~/jd_scripts/work
           node BBB.js
         env:
           TZ: Asia/shanghai
