@@ -21,7 +21,7 @@ jobs:
       - name: Checkout
         if: env.JD_COOKIE
         run: |
-          git clone https://github.com/zsh35/jd_scripts.git ~/jd_scripts
+          git clone https://github.com/zsh35/jd_scripts.git ~/TaskAction
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         if: env.JD_COOKIE
@@ -38,153 +38,146 @@ jobs:
       - name: npm install
         if: env.JD_COOKIE
         run: |
-          cd ~/jd_scripts
+          cd ~/TaskAction
           git checkout my
           npm install
 
       - name: '运行 【东东农场】'
         run: |
-          cd ~/jd_scripts
+          cd ~/TaskAction
           node jd_fruit.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
-          PUSH_KEY: ${{ github.event.client_payload.PUSH_KEY || secrets.PUSH_KEY }}
-          BARK_PUSH: ${{ github.event.client_payload.BARK_PUSH || secrets.BARK_PUSH }}
+#          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
+      - name: '运行 【京东种豆得豆】'
+        run: |
+          cd ~/TaskAction
+          node jd_plantBean.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+#          BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
       - name: '运行 【东东萌宠】'
         run: |
-          cd ~/jd_scripts
+          cd ~/TaskAction
           node jd_pet.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
-          PUSH_KEY: ${{ github.event.client_payload.PUSH_KEY || secrets.PUSH_KEY }}
-          BARK_PUSH: ${{ github.event.client_payload.BARK_PUSH || secrets.BARK_PUSH }}
+#          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
 
       - name: '运行 【口袋书店】'
         run: |
-          cd ~/jd_scripts
+          cd ~/TaskAction
           node jd_bookshop.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
-          PUSH_KEY: ${{ github.event.client_payload.PUSH_KEY || secrets.PUSH_KEY }}
-          BARK_PUSH: ${{ github.event.client_payload.BARK_PUSH || secrets.BARK_PUSH }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
 
       - name: '运行 【京喜农场】'
         run: |
-          cd ~/jd_scripts
+          cd ~/TaskAction
           node jd_jxnc.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JXNCTOKENS: ${{ secrets.JXNCTOKENS }}
-          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
-          PUSH_KEY: ${{ github.event.client_payload.PUSH_KEY || secrets.PUSH_KEY }}
-          BARK_PUSH: ${{ github.event.client_payload.BARK_PUSH || secrets.BARK_PUSH }}
+#          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
 
       - name: '运行 【宠汪汪积分兑换奖品】'
         run: |
-          cd ~/jd_scripts
+          cd ~/TaskAction
           node jd_joy_reward.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
-          PUSH_KEY: ${{ github.event.client_payload.PUSH_KEY || secrets.PUSH_KEY }}
-          BARK_PUSH: ${{ github.event.client_payload.BARK_PUSH || secrets.BARK_PUSH }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
 
       - name: '运行 【宠汪汪偷好友积分与狗】'
         run: |
-          cd ~/jd_scripts
+          cd ~/TaskAction
           node jd_joy_steal.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
-          PUSH_KEY: ${{ github.event.client_payload.PUSH_KEY || secrets.PUSH_KEY }}
-          BARK_PUSH: ${{ github.event.client_payload.BARK_PUSH || secrets.BARK_PUSH }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
       - name: '运行 【点点券】'
         run: |
-          cd ~/jd_scripts
+          cd ~/TaskAction
           node jd_necklace.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
-          PUSH_KEY: ${{ github.event.client_payload.PUSH_KEY || secrets.PUSH_KEY }}
-          BARK_PUSH: ${{ github.event.client_payload.BARK_PUSH || secrets.BARK_PUSH }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
 
       - name: '运行 【京东直播18豆】'
         run: |
-          cd ~/jd_scripts
+          cd ~/TaskAction
           node jd_live.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
-          PUSH_KEY: ${{ github.event.client_payload.PUSH_KEY || secrets.PUSH_KEY }}
-          BARK_PUSH: ${{ github.event.client_payload.BARK_PUSH || secrets.BARK_PUSH }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
+
+      - name: '运行 【取关京东店铺商品】'
+        run: |
+          cd ~/TaskAction
+          node jd_unsubscribe.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
 
       - name: '运行 【京东天天加速】'
         run: |
-          cd ~/jd_scripts
+          cd ~/TaskAction
           node jd_speed.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
-          PUSH_KEY: ${{ github.event.client_payload.PUSH_KEY || secrets.PUSH_KEY }}
-          BARK_PUSH: ${{ github.event.client_payload.BARK_PUSH || secrets.BARK_PUSH }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
 
       - name: '运行 【天天提鹅】'
         run: |
-          cd ~/jd_scripts
+          cd ~/TaskAction
           node jd_daily_egg.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
-          PUSH_KEY: ${{ github.event.client_payload.PUSH_KEY || secrets.PUSH_KEY }}
-          BARK_PUSH: ${{ github.event.client_payload.BARK_PUSH || secrets.BARK_PUSH }}
-          
-      - name: '运行 【金融养猪】'
-        run: |
-          cd ~/jd_scripts
-          node jd_pigPet.js
-        env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
-          PUSH_KEY: ${{ github.event.client_payload.PUSH_KEY || secrets.PUSH_KEY }}
-          BARK_PUSH: ${{ github.event.client_payload.BARK_PUSH || secrets.BARK_PUSH }} 
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
 
       - name: '运行 【东东超市】'
         run: |
-          cd ~/jd_scripts
+          cd ~/TaskAction
           node jd_superMarket.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
-          PUSH_KEY: ${{ github.event.client_payload.PUSH_KEY || secrets.PUSH_KEY }}
-          BARK_PUSH: ${{ github.event.client_payload.BARK_PUSH || secrets.BARK_PUSH }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
+
+      - name: '运行 【东东5G】'
+        run: |
+          cd ~/TaskAction
+          node jd_5g.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
+      - name: '运行 【东东818】'
+        run: |
+          cd ~/TaskAction
+          node jd_818.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
       # 根据上游得知该脚本有黑号风险
       #      - name: '运行 【京东家庭号】'
       #        run: |
-      #          cd ~/jd_scripts
+      #          cd ~/TaskAction
       #          node jd_family.js
       #        env:
       #          JD_COOKIE: ${{ secrets.JD_COOKIE }}
 
-      - name: '运行 【京东炸年兽】'
-        run: |
-          cd ~/jd_scripts
-          node jd_nian.js
-        env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
-
-          
-      - name: '运行 【集鞭炮赢京豆🧨】'
-        run: |
-          cd ~/jd_scripts
-          node jd_firecrackers.js
-        env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
