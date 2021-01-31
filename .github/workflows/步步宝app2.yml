@@ -33,7 +33,7 @@ jobs:
       - name: npm install
         run: |
           cd ~/TaskAction
-          git checkout master
+          git checkout main
           npm install
       - name: '运行 【步步宝app2】'
         run: |
