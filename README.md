@@ -8,7 +8,7 @@
 
 [@lxk0301](https://github.com/LXK9301/jd_scripts/tree/master) - 京东系列
 
-[@shylocks](https://github.com/shylocks/loon) - 京东系列2
+[@shylocks](https://bitbucket.org/jd-study/shylocks/src/master/) - 京东系列2
 
 [@Zero-S1](https://github.com/Zero-S1/xmly_speed) - 喜马拉雅极速版签到
 
