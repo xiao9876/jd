@@ -1,0 +1,49 @@
+name: 泡泡大战
+
+on:
+    workflow_dispatch:
+    schedule:
+        - cron: "*/30 * * * *"
+    watch:
+        types: [started]
+    repository_dispatch:
+        types: paopao
+
+jobs:
+  build:
+    env:
+      JD_COOKIE: ${{ secrets.JD_COOKIE }}
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - name: Checkout
+        if: env.JD_COOKIE
+        run: |
+          git clone https://github.com/zsh35/jd_actions.git ~/jd_actions
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        if: env.JD_COOKIE
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Cache node_modules
+        if: env.JD_COOKIE
+        uses: actions/cache@v2 # 使用 GitHub 官方的缓存 Action。
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
+      - name: npm install
+        if: env.JD_COOKIE
+        run: |
+          cd ~/jd_actions
+          git checkout main
+          npm install
+      - name: '运行 【泡泡大战】'
+        run: |
+          cd ~/jd_actions
+          node jd_paopao.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
