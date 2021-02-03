@@ -86,10 +86,10 @@ jobs:
 #          BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
       - name: '运行 【宠汪汪签到】'
-         run: |
+        run: |
           cd ~/TaskAction
           node jd_joy.js
-       env:
+        env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
