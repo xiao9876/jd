@@ -85,7 +85,7 @@ jobs:
           JXNCTOKENS: ${{ secrets.JXNCTOKENS }}
 #          BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
-      - name: '运行 【宠汪汪签到】'
+      - name: '运行 【宠汪汪签到】' 
         run: |
           cd ~/TaskAction
           node jd_joy.js
@@ -128,7 +128,7 @@ jobs:
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
 
-      # - name: '运行 【取关京东店铺商品】'
+      # - name: '运行 【取关京东店铺商品】' 
       #   run: |
       #     cd ~/TaskAction
       #     node jd_unsubscribe.js
