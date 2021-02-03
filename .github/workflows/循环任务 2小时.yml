@@ -85,10 +85,10 @@ jobs:
           JXNCTOKENS: ${{ secrets.JXNCTOKENS }}
 #          BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
-     - name: '运行 【宠汪汪签到】'
-       run: |
-         cd ~/TaskAction
-         node jd_joy.js
+      - name: '运行 【宠汪汪签到】'
+         run: |
+          cd ~/TaskAction
+          node jd_joy.js
        env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
