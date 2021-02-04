@@ -42,13 +42,7 @@ jobs:
           git checkout my
           npm install
           
-      - name: '运行 【京东炸年兽领爆竹🧨】'
-        run: |
-          cd ~/TaskAction
-          node jd_nianCollect.js
-        env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+      
 
       - name: '运行 【京东神仙书院答题】'
         run: |
