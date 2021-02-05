@@ -19,7 +19,7 @@ jobs:
       - name: Checkout
         if: env.JD_COOKIE
         run: |
-          git clone https://github.com/zsh35/jd_actions.git ~/jd_actions
+          git clone https://github.com/zsh35/jd_scripts.git ~/jd_actions
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         if: env.JD_COOKIE
@@ -37,11 +37,11 @@ jobs:
         if: env.JD_COOKIE
         run: |
           cd ~/jd_actions
-          git checkout main
+          git checkout my
           npm install
       - name: '运行 【京喜财富岛】'
         run: |
-          cd ~/jd_actions/work
+          cd ~/jd_actions
           node jx_cfd.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
