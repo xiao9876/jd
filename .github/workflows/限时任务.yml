@@ -41,14 +41,6 @@ jobs:
           cd ~/jd_scripts
           git checkout my
           npm install
-      - name: '运行 【京东炸年兽】'
-        run: |
-          cd ~/jd_scripts
-          node jd_nian.js
-        env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
-
 
       - name: '运行 【京东神仙书院】'
         run: |
@@ -58,6 +50,13 @@ jobs:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
+      - name: '运行 【京东神仙书院答题】'
+        run: |
+          cd ~/jd_scripts
+          node jd_immortal_answer.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
       - name: '运行 【京东手机年终奖】'
         run: |
@@ -72,6 +71,22 @@ jobs:
         run: |
           cd ~/jd_scripts
           node jd_nh.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
+      - name: '运行 【京东压岁钱】'
+        run: |
+          cd ~/jd_scripts
+          node jd_newYearMoney.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
+      - name: '运行 【京东压岁钱抢百元卡】'
+        run: |
+          cd ~/jd_scripts
+          node jd_newYearMoney_lottery.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
