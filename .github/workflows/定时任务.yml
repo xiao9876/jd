@@ -146,15 +146,6 @@ jobs:
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
 
-      - name: '运行 【京东排行榜】'
-        run: |
-          cd ~/TaskAction
-          node jd_rankingList.js
-        env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
-
-
       - name: '运行 【金融养猪】'
         run: |
           cd ~/TaskAction
