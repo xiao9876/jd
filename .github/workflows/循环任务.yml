@@ -153,7 +153,15 @@ jobs:
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
-
+          
+          
+      - name: '运行 【口袋书店】'
+        run: |
+          cd ~/TaskAction
+          node jd_bookshop.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}      
           
       - name: '运行 【美丽研究院】'
         run: |
