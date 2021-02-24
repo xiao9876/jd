@@ -199,14 +199,6 @@ jobs:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
-      - name: '运行 【小鸽有礼】'
-        run: |
-          cd ~/TaskAction
-          node jd_xg.js
-        env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
-
       - name: '运行 【小鸽有礼2】'
         run: |
           cd ~/TaskAction
@@ -222,3 +214,21 @@ jobs:
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
+ 
+      - name: '运行 【京东极速版红包】'
+        run: |
+          cd ~/TaskAction
+          node jd_speed_redpocke.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          
+      - name: '运行 【京东极速版】'
+        run: |
+          cd ~/TaskAction
+          node jd_speed_sign.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}      
+ 
+          
