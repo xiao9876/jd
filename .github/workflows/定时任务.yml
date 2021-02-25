@@ -206,15 +206,7 @@ jobs:
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
-      
-      - name: '运行 【京东抽奖机】'
-        run: |
-          cd ~/TaskAction
-          node jd_lotteryMachine.js
-        env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
- 
+
       - name: '运行 【京东极速版红包】'
         run: |
           cd ~/TaskAction
